@@ -1,0 +1,15 @@
+**/launchSettings.json
+bin/
+obj/
+*.user
+*.suo
+*.log
+*.lock.json
+*.sln.docstates
+/.vs/HabitLogger/v17/TestStore/0/testlog.manifest
+/.vs/HabitLogger/config/applicationhost.config
+*.v2
+*.v1
+*.testlog
+*.lock
+/.vs/HabitLogger/FileContentIndex/d0deafc4-eb82-4a20-bb86-2666c82ead65.vsidx
