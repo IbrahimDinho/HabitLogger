@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleTableExt;
+using HabitLogger.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +42,23 @@ namespace HabitLogger.UserInterface
 
             Console.WriteLine(dashedLine);
 
+
+        }
+
+        public void ShowAll(List<Habit> habits)
+        {
+            Console.Clear();
+
+            var tableData = new List<List<object>>();
+
+            foreach(Habit habit in habits)
+            {
+                tableData.Add(new List<object> { habit.Id, habit.StartDate, habit.Hours, habit.Name});
+            }
+
+            ConsoleTableBuilder
+                .From(tableData)
+                .ExportAndWriteLine(TableAligntment.Left);
 
         }
     }
