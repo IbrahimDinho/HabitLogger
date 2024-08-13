@@ -26,6 +26,8 @@ namespace HabitLogger.UserInterface
 
         public void ShowMenu()
         {
+            Console.Clear();
+
             Console.WriteLine( Name + Environment.NewLine);
             
             Console.WriteLine(Question);
@@ -37,6 +39,8 @@ namespace HabitLogger.UserInterface
             Console.WriteLine($"Type {(int)MenuOptions.Update} to {MenuOptions.Update} Record");
 
             Console.WriteLine(dashedLine);
+
+
         }
     }
 }
