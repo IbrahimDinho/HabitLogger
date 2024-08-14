@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,25 @@ namespace HabitLogger.UserInterface
         }
 
 
-        public string GetDateInput()
+        public DateTime? GetDateInput()
         {
             Console.WriteLine("Please insert the date of the habit: {Format dd-mm-yy}.");
 
             string dateInput = Console.ReadLine();
-            //ValidateInput(dateInput);
-            return dateInput;
+            DateTime? date = ValidateDateInput(dateInput);
+            return date;
+        }
+
+        public string GetNameInput()
+        {
+            Console.WriteLine("Please enter the name of the habit");
+
+            string habitName = Console.ReadLine();
+            if (string.IsNullOrEmpty(habitName))
+            {
+                Console.WriteLine("User Input is empty");
+            }
+            return habitName;
         }
 
         public int GetHoursInput()
@@ -35,8 +48,19 @@ namespace HabitLogger.UserInterface
             Console.WriteLine("Please insert the number hours of the habit.");
 
             string hoursInput = Console.ReadLine();
-            //validateHoours
-            return int.Parse(hoursInput);
+            if (string.IsNullOrEmpty(hoursInput))
+            {
+                Console.WriteLine("Input is empty");
+            }
+            try
+            {
+                return int.Parse(hoursInput);
+            }
+            catch(FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
         }
         
         /// <summary>
@@ -81,6 +105,24 @@ namespace HabitLogger.UserInterface
             return true;
 
 
+        }
+
+        private DateTime? ValidateDateInput(string dateInput)
+        {
+            if (string.IsNullOrWhiteSpace(dateInput))
+            {
+                Console.WriteLine("date is empty");
+            }
+            try
+            {
+                DateTime date = DateTime.ParseExact(dateInput, "dd-mm-yy", CultureInfo.CurrentCulture);
+                return date;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Unable to parse '{0}'", dateInput);
+                return null;
+            }
         }
     }
 }

@@ -34,11 +34,11 @@ namespace HabitLogger.UserInterface
             
             Console.WriteLine(Question);
 
-            Console.WriteLine($"Type {(int)MenuOptions.Close} to {MenuOptions.Close} application");
-            Console.WriteLine($"Type {(int)MenuOptions.View} to {MenuOptions.View} all records");
-            Console.WriteLine($"Type {(int)MenuOptions.Insert} to {MenuOptions.Insert} Record");
-            Console.WriteLine($"Type {(int)MenuOptions.Delete} to {MenuOptions.Delete} Record");
-            Console.WriteLine($"Type {(int)MenuOptions.Update} to {MenuOptions.Update} Record");
+            Console.WriteLine($"Type {(int)MenuOptions.Close} to {nameof(MenuOptions.Close)} application");
+            Console.WriteLine($"Type {(int)MenuOptions.View} to {nameof(MenuOptions.View)} all records");
+            Console.WriteLine($"Type {(int)MenuOptions.Insert} to {nameof(MenuOptions.Insert)} Record");
+            Console.WriteLine($"Type {(int)MenuOptions.Delete} to {nameof(MenuOptions.Delete)} Record");
+            Console.WriteLine($"Type {(int)MenuOptions.Update} to {nameof(MenuOptions.Update)} Record");
 
             Console.WriteLine(dashedLine);
 
