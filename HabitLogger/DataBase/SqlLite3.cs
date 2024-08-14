@@ -12,12 +12,10 @@ namespace HabitLogger.DataBase
     {
 
         private const string CONNECTIONSTRING = @"Data Source=DataBase\test.db";
-        //private const string CONNECTIONSTRING = @"URI=file:C:\Users\Ibrah\source\repos\HabitLogger\HabitLogger\DataBase\test.db";
        
 
         public void CreateTable()
         {
-            //SQLitePCL.Batteries_V2.Init();
             try
             {
                 using (var connection = new SqliteConnection(CONNECTIONSTRING))
