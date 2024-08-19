@@ -49,7 +49,7 @@ namespace HabitLogger.DataBase
                     connection.Open();
 
                     var tableCmd = connection.CreateCommand();
-                    tableCmd.CommandText = $"DELETE FROM Habit WHERE Id= {id})";
+                    tableCmd.CommandText = $"DELETE FROM Habit WHERE Id= {id}";
 
                     int rowCount = tableCmd.ExecuteNonQuery();
                     if (rowCount == 0)
@@ -145,7 +145,7 @@ namespace HabitLogger.DataBase
                             var habit = new T
                             {
                              Id = reader.GetInt32(0),
-                             StartDate= DateTime.ParseExact(reader.GetString(1), "dd-mm-yy", CultureInfo.CurrentCulture),
+                             StartDate= DateTime.ParseExact(reader.GetString(1), "MM/dd/yyyy HH:mm:ss", CultureInfo.CurrentCulture),
                              Hours = reader.GetInt32(2),
                              Name = reader.GetString(3),
                             };

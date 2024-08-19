@@ -28,7 +28,6 @@ namespace HabitLogger.UserInterface
 
         public void ShowMenu()
         {
-            Console.Clear();
 
             Console.WriteLine( Name + Environment.NewLine);
             
@@ -47,7 +46,6 @@ namespace HabitLogger.UserInterface
 
         public void ShowAll(List<Habit> habits)
         {
-            Console.Clear();
 
             var tableData = new List<List<object>>();
 

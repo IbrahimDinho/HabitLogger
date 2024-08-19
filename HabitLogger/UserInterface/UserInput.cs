@@ -24,7 +24,7 @@ namespace HabitLogger.UserInterface
 
         public DateTime? GetDateInput()
         {
-            Console.WriteLine("Please insert the date of the habit: {Format dd-mm-yy}.");
+            Console.WriteLine("Please insert the date of the habit: {Format dd-MM-yyyy}.");
 
             string dateInput = Console.ReadLine();
             DateTime? date = ValidateDateInput(dateInput);
@@ -115,7 +115,7 @@ namespace HabitLogger.UserInterface
             }
             try
             {
-                DateTime date = DateTime.ParseExact(dateInput, "dd-mm-yy", CultureInfo.CurrentCulture);
+                DateTime date = DateTime.ParseExact(dateInput, "dd-MM-yyyy", CultureInfo.CurrentCulture);
                 return date;
             }
             catch (FormatException)
